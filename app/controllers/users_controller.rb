@@ -17,11 +17,12 @@ class UsersController < ApplicationController
       render 'new'
     end
     
+  def edit
+   @user = User.find(params[:id])
+  end
+ 
   def update
-    if @user.update(message_params)
-       redirect_to root_path , notice: 'メッセージを編集完了'
-    else
-    render 'edit'
+    if @message.update(message_params)
   end
  end
  
