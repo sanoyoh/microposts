@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
     has_secure_password
   validates :age, numericality: {
-            only_integer: true, greater_than_or_equal_to:0, less_than_or_equal_to: 100
+            only_integer: true, greater_than_or_equal_to:0, less_than_or_equal_to: 100,on: :update
   }
 end
