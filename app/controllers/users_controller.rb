@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   
   def correct_user
     if current_user != @user
-      redirect_to root_url 
+      redirect_to root_url  , notice: '不正な操作のためトップページに移動しました'
     end
   end
 end
