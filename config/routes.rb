@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get    'edit'  , to: 'user#edit'
   resources :users
   resources :microposts
+  resources :relationships, only: [:create, :destroy]
 end
