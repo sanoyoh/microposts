@@ -2,7 +2,17 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show,  :edit, :update]
   before_action :correct_user, only: [:edit, :update]
   
-  def show 
+  def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at: :desc)
+  end
+  
+  def destroy
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    return redirect_to root_url if @micropost.nil?
+    @micropost.destroy
+    flash[:success] = "Micropost deleted"
+    redirect_to request.referrer || root_url
   end
   
   def new

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get    'update', to: 'users#update'
   get    'edit'  , to: 'user#edit'
   resources :users
+  resources :microposts
 end
