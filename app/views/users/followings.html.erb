@@ -1,12 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-   フォロワー一覧
+   フォロー一覧
   </div>
  
   <div class="panel-body">
-    <% @followers.each do |user| %>
+    <% @followings.each do |user| %>
       <span class="label label-info"><%= user.name %></span>
     <% end %>
   </div>
 </div>
-

@@ -4,13 +4,14 @@ class UsersController < ApplicationController
   
   def followings
    @user = User.find(params[:id])
-   @followings = @user.following_users
+   @followings = @user.following_users
   end
 
   def followers
-   @user = User.find(params[:id])
-   @followers = @user.follower_users
+   @user = User.find(params[:id])
+   @followers = @user.follower_users
   end
+  
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
