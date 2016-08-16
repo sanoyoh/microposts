@@ -2,10 +2,17 @@
   <div class="panel-heading">
    フォロー一覧
   </div>
- 
-  <div class="panel-body">
-    <% @followings.each do |user| %>
-      <span class="label label-info"><%= user.name %></span>
-    <% end %>
-  </div>
 </div>
+  <ol class="microposts">
+    <% @followings.each do |user| %>
+      <li>
+      <span class="label label-info">
+       <%= user.name %>
+       <%= gravatar_for user %>
+       </span>
+      <br>
+      </li>
+      <div class="clearfix"></div>
+    <% end %>
+  </ol>
+

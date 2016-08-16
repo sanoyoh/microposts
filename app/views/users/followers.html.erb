@@ -2,11 +2,17 @@
   <div class="panel-heading">
    フォロワー一覧
   </div>
- 
-  <div class="panel-body">
-    <% @followers.each do |user| %>
-      <span class="label label-info"><%= user.name %></span>
-    <% end %>
-  </div>
 </div>
+  <ol class="microposts">
+    <% @followers.each do |user| %>
+      <li>
+      <span class="label label-info">
+       <%= user.name %>
+       <%= gravatar_for user %>
+       </span>
+      <br>
+      </li>
+      <div class="clearfix"></div>
+    <% end %>
+  </ol>
 
